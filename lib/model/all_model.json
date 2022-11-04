@@ -1,0 +1,32 @@
+{"all_cars": [{
+    "name": "Avanza Veloz",
+    "owner": "false",
+    "image":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRVHg8Kp3U40aawoUhYhRSKsqtjtyMiD_vig&usqp=CAU",
+    "firstPrice": "12h/day = Rp.300.000",
+    "secondPrice": "24/day = Rp.500.000"
+  },
+  {
+    "name": "Toyota Innova Reborn",
+    "owner": "false",
+    "image":
+        "https://foto.kontan.co.id/YNULXmEQ3-ez59eEC_ODfMpRbNc=/smart/2021/11/05/1291507197p.jpg",
+    "firstPrice": "12h/day = Rp.400.000",
+    "secondPrice": "24/day = Rp.700.000"
+  },
+  {
+    "name": "Hyundai Creta",
+    "owner": "true",
+    "image":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMNB9xhb9NQcm9bvoayRf4JhasN57tWz59PA&usqp=CAU",
+    "firstPrice": "12h/day = Rp.700.000",
+    "secondPrice": "24/day = Rp.1.300.000"
+  },
+  {
+    "name": "Toyota Fortuner",
+    "owner": "true",
+    "image":
+        "https://statik.tempo.co/data/2020/04/23/id_933079/933079_720.jpg",
+    "firstPrice": "12h/day = Rp.600.000",
+    "secondPrice": "24/day = Rp.1.000.000"
+  }]}

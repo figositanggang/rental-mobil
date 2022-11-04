@@ -33,10 +33,15 @@ class _LoginscreenState extends State<Loginscreen> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const UserScreen(type: true, title: "ERC Rent");
-                    }));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const UserScreen(
+                              type: true, title: "ERC Rent");
+                        },
+                      ),
+                    );
                   },
                   child: Text(
                     "User",

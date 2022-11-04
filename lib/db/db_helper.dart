@@ -65,17 +65,19 @@ class DbHelper {
   insertDummyData() {
     if (initData == false) {
       initData = true;
-      return dummyData.map((data) async {
-        await saveRentalMobil(
-          ModelRentalMobil(
-            name: data['name'],
-            image: data['image'],
-            owner: data['owner'],
-            firstPrice: data['firstPrice'],
-            secondPrice: data['secondPrice'],
-          ),
-        );
-      });
+      return dummyData.map(
+        (data) async {
+          await saveRentalMobil(
+            ModelRentalMobil(
+              name: data['name'],
+              image: data['image'],
+              owner: data['owner'],
+              firstPrice: data['firstPrice'],
+              secondPrice: data['secondPrice'],
+            ),
+          );
+        },
+      );
     }
   }
 
@@ -103,10 +105,12 @@ class DbHelper {
 
   Future<List?> getAllRentalMobil(bool type) async {
     var dbClient = await _db;
-    var result = await dbClient!.query(tableName,
-        columns: [id, name, owner, image, firstPrice, secondPrice],
-        where: '$owner = ?',
-        whereArgs: [type.toString()]);
+    var result = await dbClient!.query(
+      tableName,
+      columns: [id, name, owner, image, firstPrice, secondPrice],
+      where: '$owner = ?',
+      whereArgs: [type.toString()],
+    );
     return result.toList();
   }
 

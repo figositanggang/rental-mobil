@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../db/db_helper.dart';
 import '../model/model_rental_mobil.dart';
 
-class data extends ChangeNotifier {
+class Data extends ChangeNotifier {
   DbHelper db = DbHelper();
   List allRentalMobil = [];
 

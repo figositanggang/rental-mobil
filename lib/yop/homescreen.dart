@@ -47,11 +47,13 @@ class _HomescreenState extends State<Homescreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(padding: EdgeInsets.all(20)),
-            const Text("Choose your preferred car",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                )),
+            const Text(
+              "Choose your preferred car",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: datas.map(
