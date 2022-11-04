@@ -41,7 +41,7 @@ class _HomescreenState extends State<Homescreen> {
           Icon(Icons.cabin_outlined)
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 115, 115, 115),
+      // backgroundColor: Color.fromARGB(255, 115, 115, 115),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

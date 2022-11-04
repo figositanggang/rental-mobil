@@ -1,3 +1,4 @@
+import 'package:bangyop/yop/setting_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,28 +13,42 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => Data(),
-        ),
+        ChangeNotifierProvider(create: (_) => Data()),
+        ChangeNotifierProvider(create: (_) => SettingScreenProvider()),
       ],
-      child: const MyApp(),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
-      home: const Loginscreen(),
+    final settingProv = Provider.of<SettingScreenProvider>(context);
+
+    return FutureBuilder(
+      future: settingProv.readPref(),
+      builder: (context, AsyncSnapshot snapshot) {
+        checkData() {
+          if (snapshot.data == true) {
+            return Brightness.dark;
+          }
+          return Brightness.light;
+        }
+
+        return MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.orange,
+            brightness: checkData(),
+          ),
+          home: const Loginscreen(),
+        );
+      },
     );
   }
 }
@@ -79,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
+        backgroundColor: Colors.red,
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

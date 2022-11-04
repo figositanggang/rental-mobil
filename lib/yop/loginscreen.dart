@@ -1,4 +1,5 @@
 import 'package:bangyop/firebase/analytics_helper.dart';
+import 'package:bangyop/yop/setting_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'userscreen.dart';
@@ -16,19 +17,19 @@ class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 115, 115, 115),
+      // backgroundColor: Color.fromARGB(255, 98, 116, 130),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               "ERC Rent",
-              style: TextStyle(fontSize: 24, color: Colors.white70),
+              style: TextStyle(fontSize: 24, color: Colors.orange),
             ),
             Padding(padding: EdgeInsets.all(10)),
             Icon(
               Icons.car_rental,
-              color: Colors.white70,
+              color: Colors.orange,
               size: 130,
             ),
             Row(
@@ -37,7 +38,9 @@ class _LoginscreenState extends State<Loginscreen> {
                 ElevatedButton(
                   onPressed: () {
                     analyticsHelper.logEvent(
-                        "User mengklik tombol User pada screen login");
+                      name: "click",
+                      val: "User mengklik tombol user",
+                    );
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -57,9 +60,6 @@ class _LoginscreenState extends State<Loginscreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    analyticsHelper.logEvent(
-                        "User mengklik tombol Owner pada screen login");
-
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return const UserScreen(type: false, title: "ERC");
@@ -77,6 +77,19 @@ class _LoginscreenState extends State<Loginscreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SettingScreen(),
+            ),
+          );
+        },
+        tooltip: 'Increment',
+        child: const Icon(Icons.settings),
+        backgroundColor: Colors.red,
+      ), // This trailin,
     );
   }
 }

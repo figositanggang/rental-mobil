@@ -29,7 +29,7 @@ class _SuccesScreenState extends State<SuccesScreen> {
           Icon(Icons.cabin_outlined)
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 115, 115, 115),
+      // backgroundColor: Color.fromARGB(255, 115, 115, 115),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

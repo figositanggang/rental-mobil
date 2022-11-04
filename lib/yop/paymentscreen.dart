@@ -35,7 +35,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           Icon(Icons.cabin_outlined)
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 115, 115, 115),
+      // backgroundColor: Color.fromARGB(255, 115, 115, 115),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -114,7 +114,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 Padding(padding: EdgeInsets.all(30)),
                 ElevatedButton(
                     onPressed: () {
-                      analyticsHelper.logEvent("user menekan tombol pay");
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return SuccesScreen(data: widget.data);
