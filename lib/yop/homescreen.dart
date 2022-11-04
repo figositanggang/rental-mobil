@@ -58,50 +58,51 @@ class _HomescreenState extends State<Homescreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: datas.map(
                 (data) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 10,
-                    ),
-                    child: Row(
-                      children: [
-                        Image(
-                          width: 220,
-                          image: NetworkImage(
-                            data.image!,
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PaymentScreen(
+                                data: data, title: widget.title);
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10,
+                      ),
+                      child: Row(
+                        children: [
+                          Image(
+                            width: 220,
+                            image: NetworkImage(
+                              data.image!,
+                            ),
                           ),
-                        ),
-                        Column(
-                          children: [
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return PaymentScreen(
-                                            data: data, title: widget.title);
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Text(data.name!,
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black))),
-                            Text(
-                              data.firstPrice!,
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              data.secondPrice!,
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ],
+                          Column(
+                            children: [
+                              Text(data.name!,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black)),
+                              Text(
+                                data.firstPrice!,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                data.secondPrice!,
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },

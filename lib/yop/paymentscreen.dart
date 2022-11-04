@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../firebase/analytics_helper.dart';
 import '../model/model_rental_mobil.dart';
 import 'succes.dart';
 
@@ -15,6 +16,7 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  MyAnalyticsHelper analyticsHelper = MyAnalyticsHelper();
   TextEditingController paymentControler = TextEditingController();
   TextEditingController bankcodeControler = TextEditingController();
   @override
@@ -112,6 +114,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 Padding(padding: EdgeInsets.all(30)),
                 ElevatedButton(
                     onPressed: () {
+                      analyticsHelper.logEvent("user menekan tombol pay");
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return SuccesScreen(data: widget.data);

@@ -1,3 +1,4 @@
+import 'package:bangyop/firebase/analytics_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'userscreen.dart';
@@ -10,6 +11,8 @@ class Loginscreen extends StatefulWidget {
 }
 
 class _LoginscreenState extends State<Loginscreen> {
+  MyAnalyticsHelper analyticsHelper = MyAnalyticsHelper();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +36,8 @@ class _LoginscreenState extends State<Loginscreen> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    analyticsHelper.logEvent(
+                        "User mengklik tombol User pada screen login");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -52,6 +57,9 @@ class _LoginscreenState extends State<Loginscreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    analyticsHelper.logEvent(
+                        "User mengklik tombol Owner pada screen login");
+
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return const UserScreen(type: false, title: "ERC");
