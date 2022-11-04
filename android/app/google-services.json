@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22661158490",
+    "project_id": "rental-mobil-6da19",
+    "storage_bucket": "rental-mobil-6da19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22661158490:android:ea30be3337797b087daa63",
+        "android_client_info": {
+          "package_name": "com.example.bangyop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22661158490-2qcasdp86077ebmnr108eu7bjmic3dsa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdA0e2AKPBTEaGO55S3K2wuPgNw21ZG2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22661158490-2qcasdp86077ebmnr108eu7bjmic3dsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
